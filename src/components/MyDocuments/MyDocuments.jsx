@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './DocumentCard.css';
+import './MyDocuments.css';
 
-export function DocumentCard() {
+export function MyDocuments() {
   const [documents] = useState([
     {
       id: 1,
@@ -41,48 +41,27 @@ export function DocumentCard() {
     {
       id: 6,
       code: "TR_886686-isilveira",
-      date: "02 de jun. de 2025 14:30",
-      title: "Termo de cancelamento",
-      updatedBy: ["Paula", "Roberto"]
+      date: "03 de jun. de 2025 16:45",
+      title: "Termo de transferência",
+      updatedBy: ["Lucas", "Fernanda"]
     },
     {
-      id: 6,
+      id: 7,
       code: "TR_886686-isilveira",
-      date: "02 de jun. de 2025 14:30",
-      title: "Termo de cancelamento",
-      updatedBy: ["Paula", "Roberto"]
+      date: "04 de jun. de 2025 11:20",
+      title: "Termo de manutenção",
+      updatedBy: ["Ricardo", "Juliana"]
     },
-        {
-      id: 6,
+    {
+      id: 8,
       code: "TR_886686-isilveira",
-      date: "02 de jun. de 2025 14:30",
-      title: "Termo de cancelamento",
-      updatedBy: ["Paula", "Roberto"]
-    },
-        {
-      id: 6,
-      code: "TR_886686-isilveira",
-      date: "02 de jun. de 2025 14:30",
-      title: "Termo de cancelamento",
-      updatedBy: ["Paula", "Roberto"]
-    },
-        {
-      id: 6,
-      code: "TR_886686-isilveira",
-      date: "02 de jun. de 2025 14:30",
-      title: "Termo de cancelamento",
-      updatedBy: ["Paula", "Roberto"]
-    },
-        {
-      id: 6,
-      code: "TR_886686-isilveira",
-      date: "02 de jun. de 2025 14:30",
-      title: "Termo de cancelamento",
-      updatedBy: ["Paula", "Roberto"]
-    },   
+      date: "05 de jun. de 2025 13:15",
+      title: "Termo de atualização",
+      updatedBy: ["Marcos", "Patrícia"]
+    }
   ]);
 
-return (
+  return (
     <div className="documents-page-container">
       <div className="documents-grid-container">
         {documents.map((doc) => (

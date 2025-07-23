@@ -1,0 +1,696 @@
+.schedule-form-container {
+  padding: 30px 150px 30px 150px;
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
+  background-color: var(--dark-gray1);
+  font-family: var(--fonte-body);
+}
+
+.schedule-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.form-header {
+  background: var(--wine);
+  color: var(--white);
+  padding: 24px 32px;
+  text-align: center;
+}
+
+.form-header h2 {
+  margin: 0px 0px 8px 0px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.form-header p {
+  margin: 0px;
+  opacity: 0.9;
+  font-size: 15px;
+}
+
+.form-content {
+  padding: 32px;
+}
+
+.form-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0px;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--dark-gray2);
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.help-text {
+  font-size: 14px;
+  color: var(--dark-gray2);
+  margin-top: 8px;
+}
+
+.error-message {
+  font-size: 14px;
+  color: #dc3545; /* Manter cor específica para erro */
+  margin-top: 8px;
+  display: block;
+}
+
+/* EmailInput Styles */
+.email-input-container {
+  width: 100%;
+}
+
+.email-input-wrapper {
+  border: 2px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--white);
+  transition: border-color 0.2s ease;
+}
+
+.email-input-wrapper:focus-within {
+  border-color: var(--wine);
+}
+
+.email-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.email-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--wine);
+  color: var(--white);
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.email-tag-remove {
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.email-tag-remove:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.email-input-field {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.email-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px 0px;
+  font-size: 15px;
+}
+
+.email-input.invalid {
+  color: #dc3545; /* Manter cor específica para erro */
+}
+
+.add-email-btn {
+  background: var(--wine);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.add-email-btn:hover:not(:disabled) {
+  background: var(--dark-wine);
+}
+
+.add-email-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* DatePicker Styles */
+.date-picker-container {
+  width: 100%;
+}
+
+.date-picker-modes {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mode-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 2px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  background: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  border-color: var(--wine);
+  background: var(--wine);
+  color: var(--white);
+}
+
+.mode-btn:hover:not(.active) {
+  border-color: var(--wine);
+  color: var(--wine);
+}
+
+.calendar-widget {
+  border: 2px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  border-radius: 8px;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--wine);
+  border-bottom: 1px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #e9ecef; /* Manter cor específica ou usar variável se houver */
+}
+
+.month-year {
+  font-weight: 600;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+.calendar-grid {
+  padding: 16px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-gray2);
+  padding: 8px 4px;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day-btn {
+  aspect-ratio: 1;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-btn:not(.empty):not(.past):hover {
+  background: #f0f0f0; /* Manter cor específica ou usar variável se houver */
+}
+
+.day-btn.today {
+  background: #e3f2fd; /* Manter cor específica ou usar variável se houver */
+  color: #1976d2; /* Manter cor específica ou usar variável se houver */
+  font-weight: 600;
+}
+
+.day-btn.selected {
+  background: var(--wine);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.day-btn.past {
+  color: #ccc; /* Manter cor específica ou usar variável se houver */
+  cursor: not-allowed;
+}
+
+.day-btn.empty {
+  cursor: default;
+}
+
+.date-input-wrapper {
+  margin-bottom: 16px;
+}
+
+.date-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: var(--wine);
+}
+
+.selected-date-display {
+  background: var(--dark-gray1);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--white);
+  margin-top: 12px;
+}
+
+/* TimePicker Styles */
+.time-picker-container {
+  width: 100%;
+}
+
+.time-picker-modes {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.time-selector {
+  border: 2px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  border-radius: 8px;
+  background: var(--white);
+  padding: 24px;
+}
+
+.time-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-btn {
+  background: var(--white);
+  border: 0.5px solid #000; /* Manter cor específica ou usar variável se houver */
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.time-btn:hover {
+  background: #e9ecef; /* Manter cor específica ou usar variável se houver */
+  border-color: var(--wine);
+}
+
+.time-display {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--dark-gray1);
+  min-width: 60px;
+  text-align: center;
+  padding: 8px;
+  background: var(--white);
+  border-radius: 8px;
+}
+
+.time-separator {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--dark-gray2);
+  margin: 0px 8px;
+}
+
+.time-label {
+  font-size: 13px;
+  color: var(--dark-gray2);
+  font-weight: 500;
+}
+
+.quick-times {
+  border-top: 1px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  padding-top: 16px;
+}
+
+.quick-times-label {
+  font-size: 14px;
+  color: var(--dark-gray2);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.quick-time-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quick-time-btn {
+  padding: 8px 12px;
+  border: 1px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  background: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.quick-time-btn:hover {
+  border-color: var(--wine);
+  color: var(--wine);
+}
+
+.quick-time-btn.active {
+  background: var(--wine);
+  color: var(--white);
+  border-color: var(--wine);
+}
+
+.time-input-wrapper {
+  margin-bottom: 16px;
+}
+
+.time-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+
+.time-input:focus {
+  outline: none;
+  border-color: var(--wine);
+}
+
+.selected-time-display {
+  background: var(--dark-gray1);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--white);
+  margin-top: 12px;
+}
+
+/* FileUpload Styles */
+.file-upload-container {
+  width: 100%;
+}
+
+.file-drop-zone {
+  border: 2px dashed #e9ecef; /* Manter cor específica ou usar variável se houver */
+  border-radius: 8px;
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--white);
+}
+
+.file-drop-zone:hover,
+.file-drop-zone.drag-active {
+  border-color: var(--wine);
+  background: var(--dark-gray2);
+}
+
+.drop-zone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.upload-icon {
+  color: var(--wine);
+  opacity: 0.7;
+}
+
+.drop-zone-text {
+  max-width: 400px;
+}
+
+.primary-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--dark-gray1);
+  margin: 0px 0px 8px 0px;
+}
+
+.secondary-text {
+  font-size: 14px;
+  color: var(--dark-gray1);
+  margin: 0px;
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+.files-list {
+  margin-top: 20px;
+  border: 1px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.files-list-title {
+  margin: 0px;
+  padding: 16px 20px;
+  background: var(--dark-gray1);
+  border-bottom: 1px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark-gray1);
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0; /* Manter cor específica ou usar variável se houver */
+}
+
+.file-item:last-child {
+  border-bottom: none;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0px;
+}
+
+.file-icon {
+  color: var(--wine);
+  flex-shrink: 0;
+}
+
+.file-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0px;
+}
+
+.file-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark-gray2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-meta {
+  font-size: 13px;
+  color: var(--dark-gray2);
+}
+
+.remove-file-btn {
+  background: none;
+  border: none;
+  color: #dc3545; /* Manter cor específica para erro */
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.remove-file-btn:hover {
+  background: #f8d7da; /* Manter cor específica ou usar variável se houver */
+}
+
+.files-summary {
+  padding: 12px 20px;
+  background: var(--dark-gray1);
+  border-top: 1px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+  font-size: 14px;
+  color: var(--white);
+  text-align: right;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 24px 32px;
+  background: var(--dark-gray1);
+  border-top: 1px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--wine);
+  color: var(--white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--dark-wine);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--dark-gray2);
+  border: 1px solid #e9ecef; /* Manter cor específica ou usar variável se houver */
+}
+
+.btn-secondary:hover {
+  background: var(--dark-gray1);
+  border-color: var(--wine);
+  color: var(--wine);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsividade */
+@media (max-width: 1000px) {
+  .schedule-form-container {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-form-container {
+    padding: 20px;
+    margin-top: 80px;
+  }
+  
+  .form-content {
+    padding: 20px;
+  }
+  
+  .form-actions {
+    padding: 20px;
+    flex-direction: column;
+  }
+  
+  .time-controls {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .quick-time-buttons {
+    justify-content: center;
+  }
+  
+  .date-picker-modes,
+  .time-picker-modes {
+    justify-content: center;
+  }
+}

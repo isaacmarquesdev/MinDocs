@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { FolderOpen, FileText, Calendar, Plus, Menu, X } from 'lucide-react';
 import './Sidebar.css';
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
-  const [activeItem, setActiveItem] = useState('meus-documentos');
   const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
-    { id: 'meus-documentos', label: 'Meus Documentos' },
-    { id: 'compartilhados', label: 'Documentos Compartilhados' },
-    { id: 'agendados', label: 'Documentos Agendados' },
+    { id: 'meus-documentos', label: ' Meus Documentos', icon: FileText, path: '/home' },
+    { id: 'compartilhados', label: 'Documentos Compartilhados', icon: FolderOpen, path: '/compartilhados' },
+    { id: 'agendados', label: 'Documentos Agendados', icon: Calendar, path: '/agendados' },
   ];
 
   const handleCreateDocument = () => {
     navigate('/criar-documento');
-    setActiveItem(''); // Limpa o item ativo
   };
 
-  const handleNavigate = (id) => {
-    setActiveItem(id);
-    navigate(`/${id}`);
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
+  const isActive = (path) => {
+    return location.pathname === path;
   };
 
   return (
@@ -29,7 +32,7 @@ export function Sidebar() {
         <div className="sidebar-header">
           {isOpen && <h2 className="sidebar-title">MinDocs</h2>}
           <button className="sidebar-toggle" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? '✕' : '☰'}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
@@ -39,25 +42,28 @@ export function Sidebar() {
               className="create-document-btn"
               onClick={handleCreateDocument}
             >
-              <span className="material-icons">add_circle</span>
+              <Plus size={20} />
               Criar Documento
             </button>
 
             <nav className="sidebar-nav">
-              {menuItems.map((item) => (
-                <button
-                  key={item.id}
-                  className={`sidebar-item ${activeItem === item.id ? 'active' : ''}`}
-                  onClick={() => setActiveItem(item.id)}
-                >
-                  <span className="material-icons">description</span>
-                  {item.label}
-                </button>
-              ))}
+              {menuItems.map((item) => {
+                const IconComponent = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    className={`sidebar-item ${isActive(item.path) ? 'active' : ''}`}
+                    onClick={() => handleNavigate(item.path)}
+                  >
+                    <IconComponent size={20} />
+                    {item.label}
+                  </button>
+                );
+              })}
             </nav>
           </>
         )}
       </div>
     </>
   );
-};
+}

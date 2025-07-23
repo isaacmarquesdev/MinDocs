@@ -1,13 +1,15 @@
 import { Header } from "../../components/Header/Header.jsx"; 
 import { Sidebar } from "../../components/Sidebar/Sidebar.jsx"
-import { DocumentCard } from "../../components/DocumentCard/DocumentCard.jsx";
+import { MyDocuments } from "../../components/MyDocuments/MyDocuments.jsx";
+import { Folders } from "../Folders/Folders.jsx";
+import { Scheduled } from "../Scheduled/Scheduled.jsx";
 
 export function Home() {
   return (
     <>
       <Header />
       <Sidebar />
-      <DocumentCard />
+      <MyDocuments />
     </>
   );
 }
